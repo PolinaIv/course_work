@@ -1,0 +1,210 @@
+SWARM_CONFIG = {
+  "includedFields": [
+    {
+      u'field1': {
+      	'fieldname': u'field1',
+            'name': u'field1',
+            'n': 521,
+            'type': 'ScalarEncoder',
+            'maxval': 100000.0,
+            'minval': -100000.0,
+            'w': 21},
+      u'field2': {
+           'fieldname': u'field2',
+           'name': u'field2',
+           'n': 521,
+           'type': 'ScalarEncoder',
+           'maxval': 100000.0,
+           'minval': -100000.0,
+           'w': 21},
+	u'field3': {
+	    'fieldname': u'field3', 'name': u'field3',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field4': {
+	    'fieldname': u'field4', 'name': u'field4',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field5': {
+	    'fieldname': u'field5', 'name': u'field5',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field6': {
+	    'fieldname': u'field6', 'name': u'field6',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field7': {
+	    'fieldname': u'field7', 'name': u'field7',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field8': {
+	    'fieldname': u'field8', 'name': u'field8',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field9': {
+	    'fieldname': u'field9', 'name': u'field9',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field10': {
+	    'fieldname': u'field10', 'name': u'field10',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field11': {
+	    'fieldname': u'field11', 'name': u'field11',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field12': {
+	    'fieldname': u'field12', 'name': u'field12',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field13': {
+	    'fieldname': u'field13', 'name': u'field13',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field14': {
+	    'fieldname': u'field14', 'name': u'field14',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field15': {
+	    'fieldname': u'field15', 'name': u'field15',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field16': {
+	    'fieldname': u'field16', 'name': u'field16',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field17': {
+	    'fieldname': u'field17', 'name': u'field17',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field18': {
+	    'fieldname': u'field18', 'name': u'field18',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field19': {
+	    'fieldname': u'field19', 'name': u'field19',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field20': {
+	    'fieldname': u'field20', 'name': u'field20',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field21': {
+	    'fieldname': u'field11', 'name': u'field11',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field22': {
+	    'fieldname': u'field12',
+	    'name': u'field12',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field23': {
+	    'fieldname': u'field13',
+	    'name': u'field13',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'field24': {
+	    'fieldname': u'field14',
+	    'name': u'field14',
+	    'n': 521,
+	    'type': 'ScalarEncoder',
+	    'maxval': 100000.0,
+	    'minval': -100000.0,
+	    'w': 21},
+	u'classification': {
+	    'classifierOnly': True,
+	    'fieldname': u'classification',
+	    'n': 521,
+	    'name': u'classification',
+	    'type': 'SDRCategoryEncoder',
+	    'w': 21},
+  ],
+  "streamDef": {
+    "info": "classification_24channels",
+    "version": 1,
+    "streams": [
+      {
+        "info": "sine.csv",
+        "source": "file://lab_data/24chan_train1.csv",
+        "columns": [
+          "*"
+        ]
+      }
+    ]
+  },
+  "inferenceType": "NontemporalClassification",
+  "inferenceArgs": {
+    "predictionSteps": [
+      0
+    ],
+    "predictedField": "u'classification"
+  },
+  "swarmSize": "medium"
+}
+
+
+            
+

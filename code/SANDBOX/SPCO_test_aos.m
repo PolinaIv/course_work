@@ -1,0 +1,84 @@
+clear all
+exp_data = load('C:\Work\BCI\bci-master\EXP_DATA\EXP_LSL32_new\bci_expresult_LSL32_first_12_03_2.mat');
+
+[data, sample_idx_data] = exp_data.data.get_data();
+[states, sample_idx_states] = exp_data.states.get_data();
+assert(all(sample_idx_data == sample_idx_states) == 1);
+
+Fs = exp_data.data.srate;
+L = size(data,2);
+NFFT = 2^nextpow2(L);
+clear Cr Dmax
+for bnd = 1:20
+    Fc_low = 2+bnd*2;
+    Fc_high = bnd*2;
+    data_cur = data;
+    [z_high,p_high,k_high] = butter(5, Fc_high/(Fs/2), 'high');
+    [b_high,a_high] = zp2tf(z_high,p_high,k_high);
+    data_cur = filtfilt(b_high, a_high,data_cur')'; 
+
+    [z_low,p_low,k_low] = butter(5, Fc_low/(Fs/2), 'low');
+    [b_low,a_low] = zp2tf(z_low,p_low,k_low);
+    data_cur = filtfilt(b_low, a_low,data_cur')'; 
+
+    states_cur = states;
+    borders = [1 find(abs(diff(states))==1) length(states)];
+    C0 = data_cur*data_cur'/size(data_cur,2);
+
+    Cz = zeros(size(C0));
+    Cz1 = zeros(size(C0));
+    Cz2 = zeros(size(C0));
+    Nz = 0;
+    for b = 2:length(borders)
+        range = borders(b-1):borders(b);
+        x = data_cur(:,range);
+        st = fix(mean(states(range))+0.01);
+        Cz = Cz+(x*x'/size(x,2))*(st==2);
+        Cz1 = Cz1+(x*x'/size(x,2))*(st==1);
+        Cz2 = Cz2+(x*x'/size(x,2))*(st==2);
+        Nz = Nz+size(x,2);
+    end;
+    Cz = Cz/Nz;
+
+    [V,D] = eig(Cz + 0.01*trace(Cz)/31*eye(size(Cz)),C0+ 0.01*trace(C0)/31*eye(size(C0)));
+    Dmax(bnd) = max(diag(D));
+ 
+    za = abs(hilbert(V(:,end)'*data_cur));
+    states_n = states-mean(states);
+    states_n = states_n/norm(states_n);
+    zan = za-mean(za); zan = zan/norm(zan);
+    Cr(bnd) = states_n*zan';
+    Cr(bnd)
+    bnd
+end
+figure
+plot(Cr)
+[V1,D1] = eig(Cz1 + 0.01*trace(Cz1)/31*eye(size(Cz1)),Cz2+ 0.01*trace(Cz2)/31*eye(size(C0)));
+
+P = V1(:,[1:3 end-2:end]);
+states_cur = states;
+borders = [1 find(abs(diff(states))==1) length(states)];
+clear C SS
+k = zeros(1,2);
+for b = 2:length(borders)
+    range = borders(b-1):borders(b);
+    x = P'*data_cur(:,range);
+    st = fix(mean(states(range))+0.01);
+    st
+    k(st)=k(st)+1;
+    C{b-1}.C = x*x'/size(x,2);
+    C{b-1}.S =st;
+    SS(b-1) = st;
+end;
+[SS1 idx]=sort(SS);
+Cs = C(idx);
+D = zeros(length(Cs));
+De = zeros(length(Cs));
+for i = 1:length(Cs)
+    for j=1:length(Cs)
+        D(i,j) = RiemDist(Cs{i}.C, Cs{j}.C);
+        d = Cs{i}.C - Cs{j}.C;
+        De(i,j) = sum(d(:).^2);
+    end;
+end;
+
