@@ -1,0 +1,29 @@
+Version: 2
+Regions:
+  - name: sensor
+    nodeType: py.RecordSensor
+    dimensions:
+      - 1
+    phases:
+      - 0
+    label: R0
+  - name: Classifier
+    nodeType: py.CLAClassifierRegion
+    dimensions:
+      - 1
+    phases:
+      - 1
+    label: R1
+Links:
+  - type: UniformLink
+    params: ""
+    srcRegion: sensor
+    srcOutput: dataOut
+    destRegion: Classifier
+    destInput: bottomUpIn
+  - type: UniformLink
+    params: ""
+    srcRegion: sensor
+    srcOutput: categoryOut
+    destRegion: Classifier
+    destInput: categoryIn
