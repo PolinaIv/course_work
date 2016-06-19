@@ -1,0 +1,139 @@
+\documentclass[specialist,
+substylefile = spbu.rtx,
+               subf,href,colorlinks=true, 12pt]{disser}
+
+\usepackage[a4paper,
+            mag=1000, includefoot,
+            left=3cm, right=1.5cm, top=2cm, bottom=2cm, headsep=1cm, footskip=1cm]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\ifpdf\usepackage{epstopdf}\fi
+
+% Точка с запятой в качестве разделителя между номерами цитирований
+%\setcitestyle{semicolon}
+
+% Использовать полужирное начертание для векторов
+\let\vec=\mathbf
+
+% Включать подсекции в оглавление
+\setcounter{tocdepth}{2}
+
+
+%----------------------------------------------------------------
+%\usepackage{refcheck}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{ mathrsfs }
+%\usepackage{subfigure}
+\newtheorem{proporsal}{Предложение}
+\newtheorem{definition}{Определение}
+\newtheorem{remark}{Замечание}
+\newtheorem{statement}{Утверждение}
+\newtheorem*{consequence}{Следствие}
+\newcounter{algorithm}
+\newcounter{algorithm2}
+\DeclareMathOperator*{\longrightarrowt}{\longrightarrow}
+\DeclareMathOperator*{\tot}{\to}
+
+
+\begin{document}
+
+%
+% Титульный лист на русском языке
+%
+
+%-------------------------------------
+%% Название организации
+%\institution{%
+%    Правительство Российской Федерации \\
+%    Федеральное государственное автономное образовательное учреждение \\
+%    высшего профессионального образования \\
+%    <<Национальный исследовательский университет \\
+%    <<Высшая школа экономики>> \\
+%    Факультет компьютерных наук
+%}
+%% Имя лица, допускающего к защите (зав. кафедрой)
+%
+%\title{Бакалаврская работа}
+%
+%% Тема
+%\topic{\normalfont\scshape%
+%   Применение модели иерархической временной памяти к задачам распознавания команд в неинвазивных интерфейсах мозг-компьютер
+%}
+%
+%% Автор
+%\author{Иванова Полина Максимовна}
+%
+%% Научный руководитель
+%\sa       {А.\,Е.~Осадчий}
+%%\sastatus {к.\,ф.-м.\,н, доцент}
+%
+%% Город и год
+%\city{Москва}
+%\date{\number\year}
+%
+%%\maketitle
+%----------------------------------
+
+\thispagestyle{empty}
+\begin{center}
+
+	\textbf{Правительство Российской Федерации}
+
+	\textbf{Федеральное государственное бюджетное образовательное учреждение \\
+		высшего профессионального образования}
+	\vspace{0.5ex}
+	
+	\textbf{ Национальный исследовательский университет}\\
+	\textbf{<<Высшая школа экономики>>}
+	\vspace{0.5ex}
+\end{center}
+\vspace{2ex}
+\begin{center}
+	\textbf{Факультет компьютерных наук}
+\end{center}
+\begin{flushleft}
+\noindent
+\textbf{Магистерская программа <<Науки о данных>>}\\
+\textbf{Департамент анализа данных и искусственного интеллекта}
+\end{flushleft}
+
+\begin{center}
+	\vspace{13ex}
+	\textbf{\Large{Курсовая работа}}
+	\vspace{1ex}
+
+	\textbf{\text{На тему}
+	\Large{<<Применение модели иерархической временной памяти к задачам распознавания команд в неинвазивных интерфейсах мозг-компьютер>>}}
+	
+\vspace{10ex}	
+	\begin{flushright}
+		\noindent
+		\\Студент группы НоД\_ИССА15
+		\\Иванова Полина Максимовна
+		\\Руководитель КР\\к.\,ф.-м.\,н, доцент
+		\\Осадчий Алексей Евгеньевич
+	\end{flushright}
+	
+	\vfill
+	Москва 2016
+\end{center}
+
+\tableofcontents
+\intro \input{intro.tex}
+
+\input{main_definitions.tex}
+\input{theory_part.tex}
+\input{compute_part.tex}
+
+\bibliographystyle{acm}
+\bibliography{ivanova_pm_cw_16}
+\end{document}
